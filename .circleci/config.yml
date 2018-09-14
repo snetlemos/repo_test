@@ -3,7 +3,7 @@ defaults: &default_steps
   - checkout
   - run:
       name: "Install NodeJS"
-      command: sudo apt-get install -y nodejs
+      command: apt-get install -y nodejs
 
 version: 2
 jobs:
