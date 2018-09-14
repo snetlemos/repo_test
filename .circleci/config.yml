@@ -27,13 +27,26 @@ jobs:
     - image: debian:stretch
     <<: *default_steps
 
+  deploy-my-project:
+    machine:
+      enabled: true
+    environment:
+      SERVICE_NAME: text-summarization
+      ORG: singnet
+      DOCKER_ORG: singularitynet
+      SNETD_PORT: 6207
+      SNETD_CONFIG: config/snetd_text_summarization_server_config.json
+    steps:
+    - run:
+        name: Deploy Over SSH
+        command: echo Deployyyy
+
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-    - build-my-project:
-        requires:
-          filters:
-            branches:
-              only: master
-
+      - build-my-project:
+          requires:
+            filters:
+              branches:
+                only: master
