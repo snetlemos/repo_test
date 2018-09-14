@@ -25,7 +25,7 @@ jobs:
   build-my-project:
     docker:
       - image: debian:stretch
-    <<: *defaults
+    <<: *default_steps
 
 workflows:
   version: 2
