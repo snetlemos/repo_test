@@ -1,3 +1,16 @@
+defaults: &default_steps
+  steps:
+    - checkout
+    - run:
+        name: "Default Steps 01 command 01"
+        command: echo step 01
+    - run:
+        name: "Default Steps 02 command 02"
+        command: echo step 02
+    - deploy:
+        name: Push Deploy Command
+        command: echo Detected Branch Master
+        
 version: 2
 jobs:
   build:
@@ -26,4 +39,5 @@ jobs:
       - run:
           name: Listing
           command: ls -la
+      <<: *default_steps
 
