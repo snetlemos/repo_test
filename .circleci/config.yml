@@ -14,6 +14,7 @@ jobs:
       - run:
           name: Print Enviroment variable
           command: echo $consumer_key
+          command: consumer_secret
       - run:
           name: Listing
           command: ls -la
