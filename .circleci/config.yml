@@ -41,6 +41,9 @@ jobs:
     - run:
         name: Check Node Version
         command: node --version
+    - run:
+        name: Check Variable
+        command: echo $SERVICE_NAME
 
 workflows:
   version: 2
