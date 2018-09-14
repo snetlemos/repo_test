@@ -12,6 +12,6 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
-          name: Testando
-          command: echo Glauter Lemos tests.
+          name: Listing
+          command: ls -la
 
