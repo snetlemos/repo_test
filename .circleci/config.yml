@@ -12,8 +12,8 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
-          name: Listing back
-          command: ls ../../
+          name: Print Enviroment variable
+          command: echo $consumer_key
       - run:
           name: Listing
           command: ls -la
