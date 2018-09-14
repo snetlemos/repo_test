@@ -26,5 +26,12 @@ jobs:
     docker:
       - image: debian:stretch
     <<: *defaults
-      
 
+workflows:
+  version: 2
+  build-and-maybe-deploy:
+    jobs:
+      - build-my-project
+        filters:
+          branches:
+            only: master
