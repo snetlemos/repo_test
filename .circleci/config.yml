@@ -1,43 +1,30 @@
 defaults: &default_steps
   steps:
-    - checkout
     - run:
         name: "Default Steps 01 command 01"
         command: echo step 01
     - run:
         name: "Default Steps 02 command 02"
         command: echo step 02
-    - deploy:
-        name: Push Deploy Command
-        command: echo Detected Branch Master
         
 version: 2
 jobs:
   build:
+    <<: *defaults
     docker:
       - image: debian:stretch
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
+          name: Job step 01
           command: date
       - run:
-          name: Print Enviroment variable
+          name: Job step 02 Print Enviroment variable
           command: echo $consumer_key
-      - run:
-          name: Consumer Secret
-          command: echo $consumer_secret
       - run:
           name: Touch file
           command: touch file_test.txt
       - run:
           name: LS
           command: ls -la
-      - run:
-          name: Listing
-          command: ls -la
-      <<: *default_steps
 
