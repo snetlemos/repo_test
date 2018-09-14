@@ -32,4 +32,8 @@ workflows:
   build-and-deploy:
     jobs:
     - build-my-project
+      requires:
+        filters:
+          branches:
+            only: master
 
