@@ -1,5 +1,18 @@
 defaults: &default_steps
   steps:
+    - checkout
+    - run:
+        name: Job step 01
+        command: date
+    - run:
+        name: Job step 02 Print Enviroment variable
+        command: echo $consumer_key
+    - run:
+        name: Touch file
+        command: touch file_test.txt
+    - run:
+        name: LS
+        command: ls -la
     - run:
         name: "Default Steps 01 command 01"
         command: echo step 01
@@ -9,22 +22,9 @@ defaults: &default_steps
         
 version: 2
 jobs:
-  build:
-    <<: *defaults
+  build-my-project:
     docker:
       - image: debian:stretch
-    steps:
-      - checkout
-      - run:
-          name: Job step 01
-          command: date
-      - run:
-          name: Job step 02 Print Enviroment variable
-          command: echo $consumer_key
-      - run:
-          name: Touch file
-          command: touch file_test.txt
-      - run:
-          name: LS
-          command: ls -la
+    <<: *defaults
+      
 
