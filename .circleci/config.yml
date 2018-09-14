@@ -49,7 +49,10 @@ workflows:
   version: 2
   build-test-and-deploy:
     jobs:
-      - build-my-project-container
+      - build-my-project-container:
+          filters:
+            branches:
+              only: master
       - deploy-my-project:
           requires:
             - build-my-project-container
