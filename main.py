@@ -1,1 +1,1 @@
-ver = 'Versão - 01'
+ver = 'Versão - 02'
