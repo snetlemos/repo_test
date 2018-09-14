@@ -56,3 +56,6 @@ workflows:
       - deploy-my-project:
           requires:
             - build-my-project-container
+          filters:
+            branches:
+              only: master
