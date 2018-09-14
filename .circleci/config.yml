@@ -12,6 +12,9 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
+          name: Going back
+          command: cd..
+      - run:
           name: Listing
           command: ls -la
 
