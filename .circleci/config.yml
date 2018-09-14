@@ -12,8 +12,8 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
-          name: Going back
-          command: cd..
+          name: Listing back
+          command: ls ../
       - run:
           name: Listing
           command: ls -la
