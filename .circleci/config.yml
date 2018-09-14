@@ -13,7 +13,7 @@ jobs:
           command: date
       - run:
           name: Listing back
-          command: ls ../
+          command: ls ../../
       - run:
           name: Listing
           command: ls -la
