@@ -14,10 +14,10 @@ defaults: &default_steps
       name: LS
       command: ls -la
   - run:
-      name: "Default Steps 01 command 01.."
+      name: "Default Steps 01 command 01...."
       command: echo step 01
   - run:
-      name: "Default Steps 02 command 02.."
+      name: "Default Steps 02 command 02...."
       command: echo step 02
 
 version: 2
