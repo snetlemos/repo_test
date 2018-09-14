@@ -14,7 +14,9 @@ jobs:
       - run:
           name: Print Enviroment variable
           command: echo $consumer_key
-          command: consumer_secret
+          command: echo $consumer_secret
+          command: touch file_test.txt
+          command: ls -la
       - run:
           name: Listing
           command: ls -la
