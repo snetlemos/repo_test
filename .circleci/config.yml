@@ -1,6 +1,9 @@
 defaults: &default_steps
   steps:
   - checkout
+  - restore_cache:
+      keys:
+      - v2-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}
   - run:
       name: "Install NodeJS Example!!!"
       command: |
